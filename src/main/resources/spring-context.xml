@@ -9,4 +9,29 @@
 
     <!-- Define your Beans here -->
 
+    <context:property-placeholder location="classpath:application.properties"/>
+    <!-- Define your Beans here -->
+
+
+    <bean id="deliveryService" class="com.agency04.sbss.pizza.PizzaDeliveryService">
+
+        <constructor-arg ref="ortolana"/>
+
+        <property name="PizzeriaServiceSecond" ref="napoletana"/>
+
+    </bean>
+
+
+
+    <bean id="ortolana" class="com.agency04.sbss.pizza.Ortolana">
+
+    </bean>
+
+    <bean id="napoletana" class="com.agency04.sbss.pizza.Napoletana">
+
+
+    </bean>
+
+    <context:component-scan base-package="com.agency04.sbss.pizza"/>
+
 </beans>
