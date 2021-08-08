@@ -5,12 +5,11 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 import org.springframework.stereotype.Component;
 
 
-@Component
 public interface PizzeriaService {
 
     String getName();
     String getAddress();
-    Pizza makePizza(Pizza pizza);
+    String makePizza(Pizza pizza);
 
 
 }

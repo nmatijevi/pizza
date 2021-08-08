@@ -6,15 +6,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
-@Qualifier("deliveryService")
 public class PizzaDeliveryService  implements PizzeriaDeliveryService  {
 
 
-    private PizzeriaService pizzeriaService;
+    private final PizzeriaService pizzeriaService;
 
     public PizzaDeliveryService(PizzeriaService PizzeriaService){
         this.pizzeriaService = PizzeriaService;
     }
+
 
     @Override
     public String orderPizza(Pizza pizza) {

@@ -8,16 +8,16 @@ public class Duksa implements PizzeriaService {
 
     @Override
     public String getName() {
-        return null;
+        return "Duksa";
     }
 
     @Override
     public String getAddress() {
-        return null;
+        return "Maksimir 10";
     }
 
     @Override
-    public Pizza makePizza(Pizza pizza) {
-        return pizza;
+    public String makePizza(Pizza pizza) {
+        return getName() + " na adresi: " + getAddress() + " priprema pizzu: " + pizza.getName();
     }
 }
