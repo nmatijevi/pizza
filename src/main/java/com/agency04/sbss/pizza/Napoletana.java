@@ -6,9 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-@Component
-@Qualifier("napoletana")
-@PropertySource("classpath:application.properties")
 
 public class Napoletana implements Pizza{
 

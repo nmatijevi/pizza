@@ -6,9 +6,6 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.stereotype.Component;
 
-@Component
-@Qualifier("ortolana")
-@PropertySource("classpath:application.properties")
 public class Ortolana implements Pizza{
 
     @Value("${ortolana.name}")

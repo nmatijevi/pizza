@@ -7,49 +7,22 @@ import org.springframework.stereotype.Component;
 
 @Component
 @Qualifier("deliveryService")
-public class PizzaDeliveryService  implements PizzeriaService  {
+public class PizzaDeliveryService  implements PizzeriaDeliveryService  {
 
-    String orderPizza(Pizza pizza){
-        return "orderPizzaDeliveryService";
-    }
-
-    public PizzaDeliveryService() {
-    }
 
     private PizzeriaService pizzeriaService;
 
-    public PizzaDeliveryService(PizzeriaService thePizzeriaService){
-        pizzeriaService = thePizzeriaService;
-    }
-
-    private Ortolana ortolana;
-    @Autowired
-    public PizzaDeliveryService(Ortolana ortolana){
-        ortolana = ortolana;
+    public PizzaDeliveryService(PizzeriaService PizzeriaService){
+        this.pizzeriaService = PizzeriaService;
     }
 
     @Override
-    public String getName() {
-        return ortolana.getName();
-    }
-
-    @Override
-    public String getAddress() {
-        return pizzeriaService.getAddress();
-    }
-
-    @Override
-    public Pizza makePizza(Pizza pizza) {
-        return null;
+    public String orderPizza(Pizza pizza) {
+        return pizzeriaService.makePizza(pizza) + "\nYour order should be arriving soon...";
     }
 
 
-    PizzeriaServiceSecond pizzeriaServiceSecond;
-    private Napoletana napoletana;
-    @Autowired
-    public void setPizzeriaServiceSecond(Napoletana napoletana) {
-        this.napoletana = napoletana;
-    }
+
 
 
 
